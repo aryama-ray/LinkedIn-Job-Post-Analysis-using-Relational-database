@@ -1,2 +1,2 @@
-# data-220-lab1-group-project
-Data 220 Lab1 Group Project
+# data-225-lab1-group-project
+Data 225 Lab1 Group Project
