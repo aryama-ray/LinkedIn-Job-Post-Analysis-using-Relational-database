@@ -1,3 +1,4 @@
+ananya
 # data-220-lab1-group-project
 Cleaning the company data set 
 
@@ -20,3 +21,6 @@ Save the tables in csv format onto the device
 
 
 
+# data-225-lab1-group-project
+Data 225 Lab1 Group Project
+main
