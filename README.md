@@ -301,6 +301,76 @@ print(data.dtypes)
  data.to_csv('~/Documents/CleanedcompanieswithNoNull.csv',index=False, encoding = 'utf-8')
 
 
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Drop the Unwanted data columns from the tables
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import TruncatedSVD
+from sklearn.cluster import KMeans
+from sklearn.pipeline import make_pipeline
+
+# Load the already processed data into different data frames, we are removing columns only from job postings , companies and benifits files
+
+job_postings_data = pd.read_csv('preprocessed_job_postings.csv')
+job_benefits_data = pd.read_csv('benefits.csv')
+company_data = pd.read_csv('Companies_stateformat changed.csv')
+
+
+# DROP Inferred data from job benifits
+
+job_benefits_data = job_benefits_data.drop('inferred', axis=1)
+
+
+# Drop description , zip code and address from companies 
+
+company_data=company_data.drop('description', axis=1)
+
+company_data=company_data.drop('zip_code', axis=1)
+
+company_data=company_data.drop('address', axis=1)
+
+
+
+
+# Drop original_listed_time,expiry,listed_time,currency,expiry,compensation_type
+
+
+
+
+columns_to_drop= ['original_listed_time', 'expiry', 'listed_time','currency', 'expiry', 'compensation_type']
+
+job_postings_data=job_postings_data.drop(columns_to_drop, axis=1)
+
+
+# save the tables in csv format onto the device
+
+
+
+
+job_postings_data.to_csv('~/Documents/job_postings_data.csv',index=False, encoding = 'utf-8')
+
+
+
+
+company_data.to_csv('~/Documents/company_data.csv',index=False, encoding = 'utf-8')
+
+
+
+
+
+job_benefits_data.to_csv('~/Documents/job_benefits_data.csv',index=False, encoding = 'utf-8')
+
+
+
+
+
+
+
+
+
 
 
 
