@@ -1,6 +1,6 @@
 ananya
 # data-220-lab1-group-project
-Cleaning the company data set 
+clean the company data set since it has lot of null values , 0 values , etc
 
 import the companies table and check for its datatypes
 Count the number of null values and 0 values in the data
