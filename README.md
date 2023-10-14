@@ -49,3 +49,85 @@ Foreign Key Constraints: The code sets up foreign key constraints between the va
 
 Usage
 You can execute this SQL code in your MySQL database to create and populate these tables with data from your source tables. Make sure to adapt the table names and column mappings according to your specific data sources.
+
+===========================================================================================
+Views in a database are virtual tables that can be used to simplify complex queries and present the data in a more structured manner.
+
+sql
+Copy code
+CREATE VIEW `Common Benifits` AS
+This SQL statement creates a new view named "Common Benefits."
+
+sql
+Copy code
+SELECT 
+    b.type AS Benefit_Type, 
+    COUNT(*) AS Popularity_Count,
+    (
+        SELECT c.name 
+        FROM BENEFIT b2
+        INNER JOIN JOB j ON b2.job_id = j.job_id
+        INNER JOIN COMPANY c ON j.company_id = c.company_id
+        WHERE b2.type = b.type
+        GROUP BY b2.type, c.name
+        ORDER BY COUNT(*) DESC
+        LIMIT 1
+    ) AS MostPopularIn 
+FROM BENEFIT b
+GROUP BY Benefit_Type
+ORDER BY Popularity_Count DESC
+LIMIT 10;
+This is the SQL query that defines the logic for the "Common Benefits" view. It retrieves the most common benefits offered by companies by counting how many times each benefit type appears in the "BENEFIT" table. It also identifies the company that offers each benefit type the most. The result includes three columns: "Benefit_Type," "Popularity_Count," and "MostPopularIn."
+
+Next, you provided the code for a stored procedure to find internship opportunities based on user preferences:
+
+sql
+Copy code
+DROP PROCEDURE IF EXISTS InternshipSP;
+This SQL statement drops the stored procedure named "InternshipSP" if it already exists.
+
+sql
+Copy code
+DELIMITER $$
+This sets the delimiter to "$$" to define the stored procedure.
+
+sql
+Copy code
+CREATE PROCEDURE InternshipSP(
+    IN parameter_user_id INT,
+    IN parameter_location VARCHAR(255),
+    IN parameter_skillset VARCHAR(255)
+)
+BEGIN
+This SQL code defines a stored procedure named "InternshipSP" that accepts three input parameters: "parameter_user_id," "parameter_location," and "parameter_skillset." These parameters allow users to specify their preferences for finding internship opportunities.
+
+sql
+Copy code
+SELECT
+    j.job_title,
+    j.company_id,
+    j.location,
+    j.min_salary,
+    j.max_salary,
+    j.pay_period
+FROM
+    JOB j
+INNER JOIN
+    JOBSKILL js ON j.job_id = js.job_id
+WHERE
+    j.work_type = 'Internship'
+    AND j.location = parameter_location
+    AND js.skill = parameter_skillset
+    AND j.job_id NOT IN (
+        SELECT job_id FROM JOBPOST WHERE user_id = parameter_user_id
+    );
+This is the body of the stored procedure. It retrieves internship opportunities based on the user's preferences. It selects job information such as job title, company ID, location, min salary, max salary, and pay period from the "JOB" table. The query filters job results based on the user's specified location and skillset, ensuring that the work type is "Internship." It also excludes jobs to which the user has already applied, identified through the "JOBPOST" table.
+
+sql
+Copy code
+END $$
+
+DELIMITER ;
+These statements set the end of the stored procedure definition and reset the delimiter to its default value.
+
+In summary, the code defines a view called "Common Benefits" to identify popular benefits offered by companies and creates a stored procedure called "InternshipSP" to find internship opportunities based on user preferences. The stored procedure accepts user inputs for location and skillset and retrieves matching internship opportunities from the "JOB" table while excluding any jobs to which the user has already applied.
