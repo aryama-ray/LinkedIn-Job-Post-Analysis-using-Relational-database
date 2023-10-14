@@ -21,7 +21,7 @@ Remove company size since it is not relavent to the use case and has lot of null
 
 changed the data types for the object data types to text which is the most appropriate.
 
-============================================================================================================================================================
+===================================================================================================================
 ## SQL Code for Creating and Populating Multiple Tables
 ### Overview
 From the original tables list , we have created mock up tables with respect to our use case.
