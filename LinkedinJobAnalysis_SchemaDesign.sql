@@ -12,15 +12,15 @@ CREATE DATABASE IF NOT EXISTS DATA225_LAB0;
 USE DATA225_LAB0;
 
 # ---------------------------------------------------------------------- #
-# Tables                                                                 #
+# Tables  CREATION                                                       #
 # ---------------------------------------------------------------------- #
 # ---------------------------------------------------------------------- #
 # CREATE TABLE "JOB"                                                     #
 # ---------------------------------------------------------------------- #
 DROP TABLE IF EXISTS `JOB`;
 CREATE TABLE `JOB` (
-    `job_id` BIGINT(12) NOT NULL,
-    `company_id` BIGINT(12) NOT NULL,
+    `job_id` BIGINT(100) NOT NULL,
+    `company_id` BIGINT(100) NOT NULL,
     `job_title`  VARCHAR(35),
     `max_salary` DECIMAL(12,2),
     `min_salary` DECIMAL(12,2),
@@ -48,8 +48,8 @@ FROM `DATA225_LAB1`.`preprocessed_job_postings`;
 # ---------------------------------------------------------------------- #
 DROP TABLE IF EXISTS `JOBPOST`;
 CREATE TABLE `JOBPOST` (
-    `job_id`  BIGINT(12) NOT NULL,
-	`company_id` BIGINT(12) NOT NULL,
+    `job_id`  BIGINT(100) NOT NULL,
+	`company_id` BIGINT(100) NOT NULL,
     `applies` INT(12),
     `views` INT(12),
     `job_posting_url` VARCHAR(35),
@@ -60,7 +60,8 @@ CREATE TABLE `JOBPOST` (
     CONSTRAINT `PK_JOB` PRIMARY KEY (`job_id`)
 );
 
-CREATE INDEX `company_id` ON `JOBPOST` (`company_id`);
+
+CREATE INDEX `company_id` ON `JOBPOST` (`company_id`,`job_id`);
 
 # ---------------------------------------------------------------------- #
 # INSERT DATA FROM JOB_POSTINGS INTO TABLE "JOBPOST"                     #
@@ -92,7 +93,7 @@ FROM `DATA225_LAB1`.`benefits`;
 # ---------------------------------------------------------------------- #
 DROP TABLE IF EXISTS `JOBSKILL`;
 CREATE TABLE `JOBSKILL` (
-    `job_id` BIGINT(12) NOT NULL,
+    `job_id` BIGINT(100) NOT NULL,
     `skill` VARCHAR(255)
 );
 CREATE INDEX `job_id` ON `JOBSKILL` (`job_id`);
@@ -108,7 +109,7 @@ FROM `DATA225_LAB1`.`job_skills`;
 # ---------------------------------------------------------------------- #
 DROP TABLE IF EXISTS `COMPANY`;
 CREATE TABLE `COMPANY` (
-    `company_id` BIGINT(12) NOT NULL,
+    `company_id` BIGINT(100) NOT NULL,
     `name` VARCHAR(255),
     `state` VARCHAR(255),
     `city` VARCHAR(255),
@@ -129,7 +130,7 @@ FROM `DATA225_LAB1`.`companies`;
 # ---------------------------------------------------------------------- #
 DROP TABLE IF EXISTS `EMP_CNT`;
 CREATE TABLE `EMP_CNT` (
-    `company_id` BIGINT(12) NOT NULL,
+    `company_id` BIGINT(100) NOT NULL,
     `employee_count` BIGINT(12),
     `follower_count` BIGINT(12),
 CONSTRAINT `PK_COMPANY` PRIMARY KEY (`company_id`)
@@ -147,7 +148,7 @@ FROM `DATA225_LAB1`.`employee_counts`;
 # ---------------------------------------------------------------------- #
 DROP TABLE IF EXISTS `COMP_INDUSTRY`;
 CREATE TABLE `COMP_INDUSTRY` (
-    `company_id` BIGINT(12) NOT NULL,
+    `company_id` BIGINT(100) NOT NULL,
     `industry` VARCHAR(255)
 );
 
@@ -163,7 +164,7 @@ FROM `DATA225_LAB1`.`company_industries`;
 # ---------------------------------------------------------------------- #
 DROP TABLE IF EXISTS `COMP_SPCLTY`;
 CREATE TABLE `COMP_SPCLTY` (
-    `company_id` BIGINT(12) NOT NULL,
+    `company_id` BIGINT(100) NOT NULL,
     `speciality` VARCHAR(255)
 );
 
@@ -210,6 +211,10 @@ ALTER TABLE `DATA225_LAB0`.`JOBSKILL` ADD  CONSTRAINT `fk_JOBSKILL_JOB1`
     
     
 # ---------------------------------------------------------------------- #
+<<<<<<< HEAD:LinkedinJobAnalysis_SchemaDesign.sql
+#             END OF SCHEMA DESIGN                                       #
+# ---------------------------------------------------------------------- #
+=======
 #  Add View for Job Seeker: JOB TITLE WISE SKILL REQUIREMENT             #
 # ---------------------------------------------------------------------- #
 DROP VIEW IF EXISTS `JOB TITLE WISE SKILL REQUIREMENT`; 
@@ -320,3 +325,4 @@ from `COMPANY WISE JOB REQUIREMENT WITH TOP SKILLS`;
 
    
 
+>>>>>>> aryama-ray:LinkedinJobAnalysis_v0.2.sql
