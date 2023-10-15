@@ -67,7 +67,7 @@ CREATE INDEX `company_id` ON `JOBPOST` (`company_id`,`job_id`);
 # INSERT DATA FROM JOB_POSTINGS INTO TABLE "JOBPOST"                     #
 # ---------------------------------------------------------------------- #
 INSERT INTO JOBPOST(job_id,company_id,views, job_posting_url,application_url,application_type,posting_domain)
-SELECT job_id,company_id,views,job_posting_url,application_url,application_type,posting_domain
+SELECT job_id,company_id,applies,views,job_posting_url,application_url,application_type,posting_domain
 FROM `DATA225_LAB1`.`preprocessed_job_postings`;
 
 
