@@ -152,13 +152,7 @@ DELIMITER ;
 CALL `Company and Job Ttile based Job Search-View-Apply`('Amazon','Software Development Engineer II, I');
 SELECT *
 FROM `JOB_VIEW_APPLY_LOG_TABLE`;
-
-SELECT DISTINCT application_url , JOBPOST.company_id,JOBPOST.job_id
-     FROM COMPANY INNER JOIN JOB ON COMPANY.company_id=JOB.company_id LEFT JOIN JOBPOST ON JOB.job_id=JOBPOST.job_id
-     WHERE COMPANY.name='Amazon' AND JOB.job_title='Software Development Engineer II, I';
-  SELECT COUNT(*) AS JOB_CNT
-     FROM COMPANY INNER JOIN JOB ON COMPANY.company_id=JOB.company_id LEFT JOIN JOBPOST ON JOB.job_id=JOBPOST.job_id
-     WHERE COMPANY.name='Amazon' AND JOB.job_title='Software Development Engineer II, I' ;   
+ 
 # -------------------------------------------------------------------------------------------- #
 #  TRIGGER "UPDATE LOG TABLE UPON JOB VIEW AND APPLICATION UPDATE                              #
 # -------------------------------------------------------------------------------------------- # 
