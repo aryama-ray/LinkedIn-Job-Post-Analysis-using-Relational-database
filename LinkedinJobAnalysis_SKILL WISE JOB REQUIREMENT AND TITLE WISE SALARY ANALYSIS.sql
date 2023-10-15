@@ -88,29 +88,60 @@ ORDER BY 3 DESC,1 ASC;
 
 SELECT *
 FROM `COMPANY WISE JOB REQUIREMENT WITH TOP SKILLS`;
-# -------------------------------------------------------------------------------------------- #
-#  STORED PROCEDURE "COMPANY AND TITLE BASED JOB SEARCH, VIEW AND APPLY"                       #
-# -------------------------------------------------------------------------------------------- # 
-
+# -------------------------------------------------------------------------------------------------- #
+#  STORED PROCEDURE "COMPANY AND TITLE BASED JOB SEARCH, VIEW AND APPLY"                             #
+# -------------------------------------------------------------------------------------------------- # 
+# WHEN JOB POST TABLE HAS ENTRY FOR APPLICATION URL FOR A JOB POSTED BY THE COMPANY FOR A            #
+# PARTICULAR TITLE JOB SEEKER CAN VIEW AND APPLY FOR THAT JOB. BUT WHEN APPLICATION URL IS UNKNOWN   #
+# JOB SEEKER CAN VIEW THE JOB POST ONLY ON LINKEDIN JOB POST URL                                     #
+#----------------------------------------------------------------------------------------------------#
 DROP PROCEDURE IF EXISTS `Company and Job Ttile based Job Search-View-Apply`;
 SET SQL_SAFE_UPDATES = 0;
 DELIMITER $$
 
 CREATE PROCEDURE `Company and Job Ttile based Job Search-View-Apply` (in InCompany varchar(255),in InTitle varchar(255))
 BEGIN
-   DECLARE JOB_CNT INT DEFAULT 0;
+   DECLARE JOB_APPLY_CNT INT DEFAULT 0;
+   DECLARE APPLURL VARCHAR(255);
    DECLARE JPOSTURL VARCHAR(255);
+   DECLARE J_ID BIGINT(100);
+   DECLARE C_ID BIGINT(100);
+   DECLARE COUNTER INT DEFAULT 0;
 
-   SELECT application_url INTO JPOSTURL
-     FROM COMPANY INNER JOIN JOB ON COMPANY.company_id=JOB.company_id LEFT JOIN JOBPOST ON JOB.job_id=JOBPOST.job_id
-     WHERE COMPANY.name=InCompany AND JOB.job_title=InTitle;
-     
-	IF (JPOSTURL!='unknown') THEN
-      UPDATE JOBPOST
-     	SET applies=applies+1,
-             views=views+1
-  	WHERE JOBPOST.application_url=JPOSTURL;
-    END IF;   
+   
+DECLARE END_OF_CUR INT DEFAULT 0;
+--    
+DECLARE CURSOR_URL
+     CURSOR FOR 
+     SELECT application_url,job_posting_url,JOB.job_id
+              FROM COMPANY INNER JOIN JOB ON COMPANY.company_id=JOB.company_id LEFT JOIN JOBPOST ON JOB.job_id=JOBPOST.job_id
+              WHERE COMPANY.name=InCompany AND JOB.job_title=InTitle;
+  
+DECLARE CONTINUE HANDLER 
+         FOR NOT FOUND SET END_OF_CUR = 1;
+       
+OPEN CURSOR_URL;
+
+WHILE END_OF_CUR<>1 DO
+IF APPLURL<>'unknown' THEN
+ UPDATE JOBPOST
+     	SET views=views+1, applies=applies+1
+        WHERE JOBPOST.application_url=APPLURL AND JOBPOST.job_id=J_ID;
+        set COUNTER =COUNTER+1;
+ELSE IF APPLURL='unknown' THEN
+ UPDATE JOBPOST
+     	SET views=views+1
+        WHERE JOBPOST.application_url=APPLURL AND JOBPOST.job_posting_url=JPOSTURL AND JOBPOST.job_id=J_ID;
+        set COUNTER =COUNTER+1;
+  END IF;      
+END IF;
+ FETCH NEXT FROM CURSOR_URL INTO APPLURL,JPOSTURL,J_ID;
+
+END WHILE;
+
+CLOSE CURSOR_URL;
+
+
 END $$
 
 DELIMITER ;
@@ -118,9 +149,16 @@ DELIMITER ;
 # -------------------------------------------------------------------------------------------- #
 #  CALLING STORED PROCEDURE "COMPANY AND TITLE BASED JOB SEARCH, VIEW AND APPLY"                       #
 # -------------------------------------------------------------------------------------------- # 
-CALL `Company and Job Ttile based Job Search-View-Apply`('Amazon','Applied Scientist II, Search Science and AI');
+CALL `Company and Job Ttile based Job Search-View-Apply`('Amazon','Software Development Engineer II, I');
 SELECT *
 FROM `JOB_VIEW_APPLY_LOG_TABLE`;
+
+SELECT DISTINCT application_url , JOBPOST.company_id,JOBPOST.job_id
+     FROM COMPANY INNER JOIN JOB ON COMPANY.company_id=JOB.company_id LEFT JOIN JOBPOST ON JOB.job_id=JOBPOST.job_id
+     WHERE COMPANY.name='Amazon' AND JOB.job_title='Software Development Engineer II, I';
+  SELECT COUNT(*) AS JOB_CNT
+     FROM COMPANY INNER JOIN JOB ON COMPANY.company_id=JOB.company_id LEFT JOIN JOBPOST ON JOB.job_id=JOBPOST.job_id
+     WHERE COMPANY.name='Amazon' AND JOB.job_title='Software Development Engineer II, I' ;   
 # -------------------------------------------------------------------------------------------- #
 #  TRIGGER "UPDATE LOG TABLE UPON JOB VIEW AND APPLICATION UPDATE                              #
 # -------------------------------------------------------------------------------------------- # 
@@ -137,11 +175,11 @@ CREATE TRIGGER AFTER_JOBVIEW_APPLY_UPDATE
 AFTER UPDATE
   ON JOBPOST FOR EACH ROW
 BEGIN
-   IF (new.views = old.views +1 ) 
+   IF (new.views <> old.views) 
       THEN INSERT INTO JOB_VIEW_APPLY_LOG_TABLE(user,description,viewupdate_timestamp)
         VALUES(SUBSTRING_INDEX(user(),'@',1),'viewed  jobpost',current_timestamp());
-	IF (new.applies = old.applies + 1) 
-         THEN INSERT INTO LOG_TABLE(user,description,viewupdate_timestamp)
+	IF (new.applies <> old.applies) 
+         THEN INSERT INTO JOB_VIEW_APPLY_LOG_TABLE(user,description,viewupdate_timestamp)
           VALUES(SUBSTRING_INDEX(user(),'@',1),'applied jobpost',current_timestamp());
 	END IF;
    END IF;
