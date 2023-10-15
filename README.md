@@ -57,18 +57,6 @@ In the analysis_Ananya , there are various sql queries that provide insights on 
 Views:
 1. Common Benefits View:
 This view (Common Benefits) aggregates information about benefits from a table named BENEFIT. It lists the distinct benefit types along with their popularity count and the most popular company associated with each benefit type.
-2. Company Specialty Counts View:
-This view (CompanySpecialtyCounts) counts the total number of specialties associated with each company.
-3. Most Specialized Company Specialties View:
-This view (MostSpecializedCompanySpecialties) lists the specialties of the company with the highest count of specialties.
-4. Company Count By State View:
-This view (CompanyCountByState) counts the number of companies in each U.S. state.
-
-Certainly! Below is an explanation of the provided SQL script, which includes the creation of views and a stored procedure:
-
-Views:
-1. Common Benefits View:
-This view (Common Benefits) aggregates information about benefits from a table named BENEFIT. It lists the distinct benefit types along with their popularity count and the most popular company associated with each benefit type.
 
 2. Company Specialty Counts View:
 This view (CompanySpecialtyCounts) counts the total number of specialties associated with each company.
@@ -82,5 +70,6 @@ This view (CompanyCountByState) counts the number of companies in each U.S. stat
 5. Work Type Count View:
 This view (WorkTypeCount) counts the different work types offered by companies and the total job posting count.
 
-6. Internship Stored Procedure:
+Stored Procedure:
+1:Internship Stored Procedure:
 This stored procedure (InternshipSP) retrieves internship opportunities based on user preferences. It takes two parameters (p_location and p_skillset) and returns relevant job details for internships matching the specified criteria.
