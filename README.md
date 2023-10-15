@@ -52,24 +52,26 @@ You can execute this SQL code in your MySQL database to create and populate thes
 
 ===========================================================================================
 ## Various insights 
-In the analysis_Ananya , there are various sql queries that provide insights on the tables that they can proved some analyses in repect to our requirement 
+In the analysis_Ananya , there are various sql queries that provide insights on the tables that they can proved some analyses in respect to our requirement 
 
-Views:
-1. Common Benefits View:
-This view (Common Benefits) aggregates information about benefits from a table named BENEFIT. It lists the distinct benefit types along with their popularity count and the most popular company associated with each benefit type.
+The queries provides an overview of the project, emphasizing the structured insights derived from the analysis of company, benefits, specialty, and job data. It aims to offer a comprehensive understanding of various aspects within the dataset.
 
-2. Company Specialty Counts View:
-This view (CompanySpecialtyCounts) counts the total number of specialties associated with each company.
+Query 1: Most Common Benefits
+This query aims to identify the most common benefits provided by companies and determine which company offers each benefit the most. It creates a view named "Common Benefits" that includes the benefit type, its popularity count, and the company that provides it the most. The results are sorted by popularity count in descending order.
 
-3. Most Specialized Company Specialties View:
-This view (MostSpecializedCompanySpecialties) lists the specialties of the company with the highest count of specialties.
+Query 2: Company's Total Count of Specialties
+This query creates a view named "CompanySpecialtyCounts" to count the total number of specialties associated with each company. The results include the company name and the total count of specialties, ordered by the total specialties count in descending order.
 
-4. Company Count By State View:
-This view (CompanyCountByState) counts the number of companies in each U.S. state.
+Query 3: Specialties of the Most Specialized Company
+This query creates a view named "MostSpecializedCompanySpecialties" to list the specialties of the company with the highest count of specialties. It involves nested subqueries to find and display the specialties for the most specialized company.
 
-5. Work Type Count View:
-This view (WorkTypeCount) counts the different work types offered by companies and the total job posting count.
+Query 4: Count Number of Job Posting Companies by State (US)
+This query creates a view named "CompanyCountByState" to count the number of companies in each U.S. state, focusing on job posting companies. The results include the company state and the number of companies, sorted by the number of companies in descending order.
 
-Stored Procedure:
-1:Internship Stored Procedure:
-This stored procedure (InternshipSP) retrieves internship opportunities based on user preferences. It takes two parameters (p_location and p_skillset) and returns relevant job details for internships matching the specified criteria.
+Query 5: Count of Different Work Types and Job Posting Counts
+This query creates a view named "WorkTypeCount" to count the different work types offered by companies and the total job posting count for each company. The work types include part-time, full-time, internship, temporary, voluntary, and other. The results are ordered by the total job positions in descending order.
+
+Stored Procedure: Internship Opportunities Based on User Preferences
+This section introduces a stored procedure named "InternshipSP" designed to fetch internship opportunities based on user preferences. The procedure takes two parameters, location, and skillset. It utilizes a SELECT query to retrieve relevant job details, such as job title, company ID, location, salary details, and required skills, for internships that match the user's preferences.
+
+An example is provided, demonstrating how to call the stored procedure with specific user inputs for location ('Los Angeles, CA') and skillset ('EDU').
