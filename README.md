@@ -1,5 +1,5 @@
 ananya
-# data-220-lab1-group-project 
+# data-225-lab1-group-project 
 
 ## Cleaning of the Companies table using jupyter notebook
 
