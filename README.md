@@ -28,7 +28,7 @@ b. Missing value treatment- if column has greater than 80% of missing values, dr
 c. All string data type attributes were checked and processed for non-ascii characters and non-ascii were removed.
 d. Changing all the data type in proper format compatible with database MySQL Workbench
 e. File is downloaded in UTF-8 format.
-<img>
+
 ### ReadMe_Job_postings.ipynb has elaborated details of preprocessing of Job Postings file.
 #-------------------------------------------------------------------------------------------------------------------------#
 # Data Import
@@ -49,7 +49,7 @@ d. Jobskill: This table stores details regarding the skill required for a job.A 
 e. Company: This table stores details of a compnay. A company must have multiple job openings.
 f. Employee_cnt: This table stores details of employee strength of a company. A company has multiple employees.
 g. Comp_Spclty: This table stores details specilaity of a company. A company can have different specilities.
-h. Comp_Industry: This table stores details of industry in which the company belongs.A company might belong toi different industries.
+h. Comp_Industry: This table stores details of industry in which the company belongs.A company might belong to different industries.
 
 ![EER Diagram_v0 2](https://github.com/aryama-ray/data-225-lab1-group-project/assets/42118282/a9cf9191-1584-44dd-975a-4bd6536fa0ba)
 
