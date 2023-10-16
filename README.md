@@ -71,3 +71,5 @@ The data cleaning process involved the following datasets:
 - **Conditions**: Triggered before an update on `JOB` when the `OLD.max_salary` is different from the `NEW.max_salary`.
 
 These triggers enhance database management and monitoring for a job posting system, helping maintain data integrity, archive high-interest jobs, and notify HR of critical changes.
+
+Please refer to the respective SQL and ipynb files for detailed information on each processes.
