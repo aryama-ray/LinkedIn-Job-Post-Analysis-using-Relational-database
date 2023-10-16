@@ -6,8 +6,8 @@ The work consists of 2 main components, preprocessing of few of the tables of th
 
 ## Table of Contents
 
-- [Table Structure](#table-structure)
 - [Data Cleaning](#data-cleaning)
+- [Table Structure](#table-structure)
 - [Archiving High-Interest Jobs](#archiving-high-interest-jobs)
 - [Expiring Old Job Postings](#expiring-old-job-postings)
 - [Handling Low-Interest Jobs](#handling-low-interest-jobs)
