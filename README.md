@@ -92,3 +92,5 @@ An HR manager can have multiple requirements from the system.
 <img width="352" alt="COMPANY WISE JOB REQUIREMENT WITH TOP SKILLS " src="https://github.com/aryama-ray/data-225-lab1-group-project/assets/42118282/1279abcc-fe9f-4153-b2ce-bf476d53300b">
 
 5. A job seeker also view and applies for the job on the Linkedin platform.When job post table has entry for application url for a job posted by the company for a particular title job seeker can view and apply for that job. but when application url is unknown job seeker can view the job post only on linkedin job post url. A propcedure has been created for this task along with a log table to monitor view and apply count update.    
+
+![procedure ](https://github.com/aryama-ray/data-225-lab1-group-project/assets/42118282/322de8bd-8223-4129-b3d2-cb12d627b70e)
