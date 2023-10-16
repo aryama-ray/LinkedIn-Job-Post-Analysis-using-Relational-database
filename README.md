@@ -1,3 +1,5 @@
+# data-225-lab1-group-project
+
 # Work Overview
 
 This work involves cleaning and managing data related to various aspects of a company. The main components of the my work are as follows:
@@ -24,10 +26,12 @@ Several views and procedures were created for different purposes:
 
 3. **Job Details Procedure**: This procedure takes a `job_id` as input and returns all details associated with that `job_id` and `company_id`.
 
-4. **Delete Job Procedure**: This procedure takes a `job_id` as input and deletes all details associated with that `job_id`.
+4. **Delete Job Procedure**: This procedure takes a `job_id` and `company_id` as input and deletes all details associated with that `job_id`.
 
-5. **Archived Table**: An archived table was created for all the `job_id` details which are being filled or removed.
+5. **Delete Company Procedure**: This procedure takes a `company_id` as input and deletes all details associated with that `company_id`.
 
-6. **Archive Procedure**: A procedure was written to fill the archived table.
+6. **Archived Table**: An archived table was created for all the `job_id` details which are being filled or removed.
+
+7. **Archive Procedure**: A procedure was written to fill the archived table.
 
 Please refer to the respective SQL files for detailed information on each view and procedure.
