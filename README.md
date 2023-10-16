@@ -58,20 +58,27 @@ The queries provides an overview of the project, emphasizing the structured insi
 
 Query 1: Most Common Benefits
 This query aims to identify the most common benefits provided by companies and determine which company offers each benefit the most. It creates a view named "Common Benefits" that includes the benefit type, its popularity count, and the company that provides it the most. The results are sorted by popularity count in descending order.
+<img width="447" alt="1 1" src="https://github.com/aryama-ray/data-225-lab1-group-project/assets/86912395/7c84212c-0515-48a6-a5a3-82780b7cfaad">
 
 Query 2: Company's Total Count of Specialties
 This query creates a view named "CompanySpecialtyCounts" to count the total number of specialties associated with each company. The results include the company name and the total count of specialties, ordered by the total specialties count in descending order.
+<img width="886" alt="2 1" src="https://github.com/aryama-ray/data-225-lab1-group-project/assets/86912395/93de53da-9142-49f2-b689-db1c3f6a0152">
 
 Query 3: Specialties of the Most Specialized Company
 This query creates a view named "MostSpecializedCompanySpecialties" to list the specialties of the company with the highest count of specialties. It involves nested subqueries to find and display the specialties for the most specialized company.
+<img width="1145" alt="3 1" src="https://github.com/aryama-ray/data-225-lab1-group-project/assets/86912395/1363e03a-f5dd-4b7c-ad07-a1e3ef62a582">
+
 
 Query 4: Count Number of Job Posting Companies by State (US)
 This query creates a view named "CompanyCountByState" to count the number of companies in each U.S. state, focusing on job posting companies. The results include the company state and the number of companies, sorted by the number of companies in descending order.
+<img width="1409" alt="4 1" src="https://github.com/aryama-ray/data-225-lab1-group-project/assets/86912395/58b2384b-14a6-4da5-970c-eed1a456f1f6">
 
 Query 5: Count of Different Work Types and Job Posting Counts
 This query creates a view named "WorkTypeCount" to count the different work types offered by companies and the total job posting count for each company. The work types include part-time, full-time, internship, temporary, voluntary, and other. The results are ordered by the total job positions in descending order.
+<img width="672" alt="5 1" src="https://github.com/aryama-ray/data-225-lab1-group-project/assets/86912395/0a4ef04f-15da-4f88-8e5e-611db853d240">
 
 Stored Procedure: Internship Opportunities Based on User Preferences
 This section introduces a stored procedure named "InternshipSP" designed to fetch internship opportunities based on user preferences. The procedure takes two parameters, location, and skillset. It utilizes a SELECT query to retrieve relevant job details, such as job title, company ID, location, salary details, and required skills, for internships that match the user's preferences.
-
 An example is provided, demonstrating how to call the stored procedure with specific user inputs for location ('Los Angeles, CA') and skillset ('EDU').
+
+<img width="1113" alt="SP" src="https://github.com/aryama-ray/data-225-lab1-group-project/assets/86912395/89c233ef-8ea4-42c5-862a-1ced8bf552b0">
