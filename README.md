@@ -78,8 +78,17 @@ An HR manager can have multiple requirements from the system.
 ### Data Analysis based on Skill,job title,salary 
 #-------------------------------------------------------------------------------------------------------------------------#
 1. A job seeker searches for job title wise skill requirments in the company. A view has been created for this type of search for a job seeker.
+   ![JOB SEEKER USER_JOB TITLE WISE SKILL REQUIREMENT   AND APPLICATION LINK ](https://github.com/aryama-ray/data-225-lab1-group-project/assets/42118282/5b947037-5911-4c09-b90c-ffd88b365c17)
+
 2. A job seeker searches different experience level wise top 5 average salaries offered across the companies with different job title name.A view has been created for this type of search for a job seeker.
+   
+![EXPERIENCE LEVEL WISE TOP 5 AVG SALARY WITH DIFFERENT JOB TITLE](https://github.com/aryama-ray/data-225-lab1-group-project/assets/42118282/77da7509-97d2-4013-8cd9-32db836c0aeb)
+
 3. A job seeker searches for top 5 skills which are on demand on Linkedin job posting site.A view has been created for this type of search for a job seeker.
+   
+![Top 5 SKILLS WITH HIGHEST REQUIREMENT ](https://github.com/aryama-ray/data-225-lab1-group-project/assets/42118282/2487915e-6cf7-4c65-a6f3-adeed149e4f3)
+
 4. Also, job seeker searches which companies are offering jobs with these top 5 skills most. A view has been created for this type of search for a job seeker.
-5. A job seeker also view and applies for the job on the Linkedin platform.When job post table has entry for application url for a job posted by the company for a particular title job seeker can view
-   and apply for that job. but when application url is unknown job seeker can view the job post only on linkedin job post url. A propcedure has been created for this task along with a log table to monitor view and    apply count update.    
+<img width="352" alt="COMPANY WISE JOB REQUIREMENT WITH TOP SKILLS " src="https://github.com/aryama-ray/data-225-lab1-group-project/assets/42118282/1279abcc-fe9f-4153-b2ce-bf476d53300b">
+
+5. A job seeker also view and applies for the job on the Linkedin platform.When job post table has entry for application url for a job posted by the company for a particular title job seeker can view and apply for that job. but when application url is unknown job seeker can view the job post only on linkedin job post url. A propcedure has been created for this task along with a log table to monitor view and apply count update.    
