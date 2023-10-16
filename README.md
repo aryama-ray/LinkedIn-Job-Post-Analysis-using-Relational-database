@@ -51,6 +51,8 @@ f. Employee_cnt: This table stores details of employee strength of a company. A 
 g. Comp_Spclty: This table stores details specilaity of a company. A company can have different specilities.
 h. Comp_Industry: This table stores details of industry in which the company belongs.A company might belong toi different industries.
 
+![EER Diagram_v0 2](https://github.com/aryama-ray/data-225-lab1-group-project/assets/42118282/a9cf9191-1584-44dd-975a-4bd6536fa0ba)
+
 After schema design and establishing the relation, data were inserted from staging database into this working database.
 
 #-------------------------------------------------------------------------------------------------------------------------#
