@@ -30,6 +30,7 @@ d. Changing all the data type in proper format compatible with database MySQL Wo
 e. File is downloaded in UTF-8 format.
 
 ### ReadMe_Job_postings.ipynb has elaborated details of preprocessing of Job Postings file.
+https://github.com/aryama-ray/data-225-lab1-group-project/blob/cfe868e55801c1ad1b399f212d8f4d98c95785cd/README_JOBPOSTINGS.ipynb
 #-------------------------------------------------------------------------------------------------------------------------#
 # Data Import
 #-------------------------------------------------------------------------------------------------------------------------#
