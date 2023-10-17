@@ -127,7 +127,6 @@ Several views and procedures were created to facilitate data analysis and manage
 
 5. **Delete Company Procedure**: This procedure allows the deletion of all details associated with a specific company. It facilitates data management for company profiles.
 
-6. **Archived Table and Procedure**: An archived table was created to store details of job postings that have been removed from the main table. A procedure was written to facilitate the archiving process.
 
 ## Repository Structure
 
