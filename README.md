@@ -1,4 +1,4 @@
-# Database Management and Data Cleaning - Readme
+# LinkedIn Data Analysis - Readme
 
 This readme provides a detailed explanation of every component within the database management and data cleaning project.
 
@@ -159,6 +159,35 @@ We are able connect to the aws with help of python pymysql library and also able
 
 There is a predefined log in mysql called the General Log which is been viewed by creating a table and sending paramenters into it. This table can be exported in csv form.
 
+
+CREATE TABLE general log (
+
+event time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+ON UPDATE CURRENT_TIMESTAMP,
+
+user_host mediumtext NOT NULL,
+
+thread_id bigint (21) unsigned NOT NULL,
+
+server_id` int(10) unsigned NOT NULL,
+
+command_type` varchar(64) NOT NULL,
+
+argument mediumtext NOT NULL
+
+) ENGINE=CSV DEFAULT CHARSET=utf8 COMMENT="General log';
+
+
+
+SET global general_log= 1;
+
+SET global log_output = 'table';
+
+
+select from mysql.general_log;
+
+SET global general_log= 0;
 
 
 
