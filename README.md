@@ -133,4 +133,13 @@ Several views and procedures were created to facilitate data analysis and manage
 
 This repository contains SQL scripts and files related to the data cleaning process, triggers, views, and procedures. Together, these components create a comprehensive solution for managing company and job posting data, making it more organized and accessible for analysis and database management.
 
+## Performance Analysis 
+
+## Access Privilage 
+
+## AWS Connection 
+
+## Logging DB
+
+
 
