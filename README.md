@@ -134,6 +134,11 @@ This repository contains SQL scripts and files related to the data cleaning proc
 
 ## Performance Analysis 
 
+Utilized JMeter to measure and optimize SQL query performance for enhanced database efficiency.
+
+![WhatsApp Image 2023-10-16 at 9 17 33 PM](https://github.com/aryama-ray/data-225-lab1-group-project/assets/92011107/b221111c-df4b-4daa-8a5b-247967b6e02b)
+
+
 ## Access Privilage 
 
 ## AWS Connection 
