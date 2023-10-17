@@ -1,23 +1,41 @@
 # data-220-lab1-group-project
-# Job and Company Data Analysis
+# Project Title
 
-This repository contains SQL queries that analyze job and company data. The repository includes two primary SQL queries:
+The project involves the analysis of LinkedIn job data. It comprises three main categories of datasets, including company details, job details, and job postings. Preprocessing steps have been performed to ensure the data is suitable for import into a MySQL Workbench database.
 
-## Job View Query
+## Dataset Overview
 
-The first query creates a view named Job_View, which provides information about job posts, including the number of views, job title, work type, company name, job location, and company city. The view is created using data from the JOBPOST, JOB, and COMPANY tables. It is ordered by the number of views in descending order.
+### Company Details:
 
-## Company Sponsorship View Query
+- companies.csv
+- company_industries.csv
+- company_specialities.csv
+- employee_counts.csv
 
-The second query creates a view named Company_Sponsorship_View, which provides details about each company, including the company ID, company name, the count of sponsored jobs, and the count of non-sponsored jobs. The view is created using data from the COMPANY and JOB tables. It is ordered by the number of sponsored jobs in descending order.
+### Job Details:
 
-## Note:
+- benefits.csv
+- job_industries.csv
+- job_skills.csv
 
-- Please ensure that the necessary database schema and tables (JOBPOST, JOB, and COMPANY) are properly set up and populated before executing the queries.
-- The views are created to simplify data analysis tasks and can be utilized for various reporting and analytical purposes.
-- Make sure to understand the schema of the underlying database to interpret the results accurately.
-- These SQL queries are tailored for specific data structures, so ensure they align with your data schema before execution.
-- Always validate and test the queries in a safe environment before deploying them in a production setting.
+### Job Postings:
 
+- job_postings.csv
 
+The initial dataset required various corrections and preprocessing steps, including handling null values, removing non-ASCII characters that could not be interpreted in the database, and correcting the format of location and date columns.
 
+To effectively utilize this dataset, it is crucial to set up a database based on the provided input files. Ensure the files are in the correct format and have the appropriate data types for successful importation into the database. The preprocessing steps aimed to facilitate seamless data importation and processing within the MySQL Workbench platform.
+
+## SQL Queries
+
+The repository includes SQL queries for analyzing job and company data. Two primary queries have been provided:
+
+### Job View Query
+
+The first query creates a view named Job_View, which provides information about job posts, including the number of views, job title, work type, company name, job location, and company city.
+
+### Company Sponsorship View Query
+
+The second query creates a view named Company_Sponsorship_View, which provides details about each company, including the company ID, company name, the count of sponsored jobs, and the count of non-sponsored jobs.
+
+Please refer to the respective SQL and ipynb files for detailed information
