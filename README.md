@@ -1,9 +1,7 @@
 # data-220-lab1-group-project
-# Project Title
-
-The project involves the analysis of LinkedIn job data. It comprises three main categories of datasets, including company details, job details, and job postings. Preprocessing steps have been performed to ensure the data is suitable for import into a MySQL Workbench database.
 
 ## Dataset Overview
+The project involves the analysis of LinkedIn job data. It comprises three main categories of datasets, including company details, job details, and job postings. Preprocessing steps have been performed to ensure the data is suitable for import into a MySQL Workbench database.
 
 ### Company Details:
 
