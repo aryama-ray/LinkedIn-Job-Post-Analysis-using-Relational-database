@@ -74,6 +74,8 @@ An HR manager can have multiple requirements from the system.
  
 ![WhatsApp Image 2023-10-16 at 5 05 21 PM](https://github.com/aryama-ray/data-225-lab1-group-project/assets/92011107/a069019a-436c-451f-ba6c-e38dcda5835c)
 
+![WhatsApp Image 2023-10-16 at 9 10 02 PM](https://github.com/aryama-ray/data-225-lab1-group-project/assets/92011107/c778ff46-f1b7-4c77-a72f-3522bd1c6317)
+
 
 ## Log Table and Triggers
 
