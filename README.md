@@ -20,23 +20,15 @@ The project involves the analysis of LinkedIn job data. It comprises three main 
 
 - Preprocessed_Job_Postings.csv
 
-The initial dataset required various corrections and preprocessing steps :
-
-Import the job postings table and check for its data types.
-
-Count the number of null values and 0 values in the dataset.
-
-Extract the non-zero values into a separate dataframe for further analysis, such as mean, mode, or median calculation.
-
-Compute the mean/mode of the columns to replace the values that are originally 0.
-
-Replace missing values and 0 values in state, country, zip code, address, and city columns with the corresponding mode values.
-
-Remove non-ASCII values from each column, including characters such as '', '"', and ',', replacing them with blank ''.
-
-Eliminate the company size column, as it is not relevant to the use case and contains numerous null values.
-
-Convert the object data types to text, which is the most suitable format for the dataset.
+- The initial dataset required various corrections and preprocessing steps :
+- Import the job postings table and check for its data types.
+- Count the number of null values and 0 values in the dataset.
+- Extract the non-zero values into a separate dataframe for further analysis, such as mean, mode, or median calculation.
+- Compute the mean/mode of the columns to replace the values that are originally 0.
+- Replace missing values and 0 values in state, country, zip code, address, and city columns with the corresponding mode values.
+- Remove non-ASCII values from each column, including characters such as '', '"', and ',', replacing them with blank ''.
+- Eliminate the company size column, as it is not relevant to the use case and contains numerous null values.
+- Convert the object data types to text, which is the most suitable format for the dataset.
 
 
 ## SQL Queries
@@ -61,15 +53,11 @@ This project focuses on utilizing JMeter for measuring the performance of SQL qu
 
 Features:
 
-Load testing SQL queries under diverse workloads
-
-Assessing database performance under stress conditions
-
-Identifying and resolving SQL query performance bottlenecks
-
-Enhancing SQL query execution efficiency through optimization techniques
-
-Please refer to the respective SQL and ipynb files for detailed information
+- Load testing SQL queries under diverse workloads
+- Assessing database performance under stress conditions
+- Identifying and resolving SQL query performance bottlenecks
+- Enhancing SQL query execution efficiency through optimization techniques
+- Please refer to the respective SQL and ipynb files for detailed information
 
 ![WhatsApp Image 2023-10-16 at 9 17 31 PM](https://github.com/aryama-ray/data-225-lab1-group-project/assets/144860707/f15c2a03-3339-4591-aa67-29ffa26eab89)
 
