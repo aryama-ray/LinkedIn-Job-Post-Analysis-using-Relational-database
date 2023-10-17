@@ -141,14 +141,24 @@ Utilized JMeter to measure and optimize SQL query performance for enhanced datab
 
 ## Access Privilage 
 
+We have two kinds of users for our system HR and Job seeker. The HR, who has access to procedures, views and all the data in the DB to help post or edit any kinbd of information in DB. 
+The Job Seeker has access to views and procedures which helps him to find the optimal job based on requirements.
+
+<img width="679" alt="Screenshot 2023-10-16 at 11 44 42 PM" src="https://github.com/aryama-ray/data-225-lab1-group-project/assets/92011107/450fa33f-615b-408c-96e8-b0408aed9d62">
+
+
+
 ## AWS Connection 
 
-we are able connect to the aws with help of python pymysql library and also able to execute the query.
+We are able connect to the aws with help of python pymysql library and also able to execute the query.
 
 ![WhatsApp Image 2023-10-16 at 11 30 42 PM](https://github.com/aryama-ray/data-225-lab1-group-project/assets/92011107/92badea1-791f-45c7-9d71-fd466ebcb8e7)
 
 
 ## Logging DB
+
+There is a predefined log in mysql called the General Log which is been viewed by creating a table and sending paramenters into it. This table can be exported in csv form.
+
 
 
 
