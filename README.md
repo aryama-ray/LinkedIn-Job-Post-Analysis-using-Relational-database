@@ -71,6 +71,8 @@ A job seeker can have multiple requirements from the system.
 An HR manager can have multiple requirements from the system.
  ####           1. HR manager can add job post on the platform
  ####           2. HR manager can view performance of the job post, keep track of applications on the platform.
+ 
+![WhatsApp Image 2023-10-16 at 5 05 21 PM](https://github.com/aryama-ray/data-225-lab1-group-project/assets/92011107/a069019a-436c-451f-ba6c-e38dcda5835c)
 
 
 ## Log Table and Triggers
