@@ -29,6 +29,50 @@ The data cleaning process involved the following datasets:
 
 6. **UTF-8 Format**: Data was saved in UTF-8 format for uniform encoding and compatibility.
 
+
+## Importing the Database 
+
+A staging database was created to store imported files in the Workbench.
+All preprocessed data were imported into MySQL workbech staging database using Table Import Wizard and with proper format.
+
+## Database Schema Design and insertion of Data from staging Database
+
+A database schema was design to perform entire analysis for this project. Cardinalities and relations were identified. The database was created with normalized tables and primary key,
+foreign key and index fields. 
+Following tables were created along with the attributes.
+a. Job: This table stored job details for a company. A job can have multiple jobposts.
+b. Jobpost : This table stores details regarding a jobpost posted from a company.A particular jobpost will be published from a company.
+c. Benefit: This table stores details regarding benefits offered with a job. A job can offer mutiple benefits.
+d. Jobskill: This table stores details regarding the skill required for a job.A job will require multiple job skills.
+e. Company: This table stores details of a compnay. A company must have multiple job openings.
+f. Employee_cnt: This table stores details of employee strength of a company. A company has multiple employees.
+g. Comp_Spclty: This table stores details specilaity of a company. A company can have different specilities.
+h. Comp_Industry: This table stores details of industry in which the company belongs.A company might belong to different industries.
+
+![EER Diagram_v0 2](https://github.com/aryama-ray/data-225-lab1-group-project/assets/42118282/a9cf9191-1584-44dd-975a-4bd6536fa0ba)
+
+After schema design and establishing the relation, data were inserted from staging database into this working database.
+
+## Functional Analysis and USE case diagram design
+
+#### Functional Analysis requires identification of functional elements. Here we assume the database system will be accessed by two type of users. 
+#### a. Job Seeker
+
+A job seeker can have multiple requirements from the system.
+                            
+#### Primarily, 1. a job seeker can search for:
+                          i. a job on the platform based on skills, experience level, job title, job location, salary etc.
+                          ii. a company on the platform based on company name, company size,benefits etc.
+ ####           2. a job seeker can view and apply for a job:
+                          i. if the job post has application link posted on the platform job seeker can apply
+                          ii. if not, job seeker can view the job post via platform
+####  b. HR Manager
+
+An HR manager can have multiple requirements from the system.
+ ####           1. HR manager can add job post on the platform
+ ####           2. HR manager can view performance of the job post, keep track of applications on the platform.
+
+
 ## Log Table and Triggers
 
 A log table was created to maintain a record of database changes, and triggers were implemented for each table to capture `UPDATE`, `DELETE`, and `INSERT` operations and populate the log table with relevant information.
@@ -84,6 +128,5 @@ Several views and procedures were created to facilitate data analysis and manage
 ## Repository Structure
 
 This repository contains SQL scripts and files related to the data cleaning process, triggers, views, and procedures. Together, these components create a comprehensive solution for managing company and job posting data, making it more organized and accessible for analysis and database management.
-
 
 
