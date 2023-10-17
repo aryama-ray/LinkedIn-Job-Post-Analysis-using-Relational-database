@@ -30,8 +30,5 @@ Several views and procedures were created for different purposes:
 
 5. **Delete Company Procedure**: This procedure takes a `company_id` as input and deletes all details associated with that `company_id`.
 
-6. **Archived Table**: An archived table was created for all the `job_id` details which are being filled or removed.
-
-7. **Archive Procedure**: A procedure was written to fill the archived table.
 
 Please refer to the respective SQL files for detailed information on each view and procedure.
