@@ -138,6 +138,11 @@ This repository contains SQL scripts and files related to the data cleaning proc
 
 ## AWS Connection 
 
+we are able connect to the aws with help of python pymysql library and also able to execute the query.
+
+![WhatsApp Image 2023-10-16 at 11 30 42 PM](https://github.com/aryama-ray/data-225-lab1-group-project/assets/92011107/92badea1-791f-45c7-9d71-fd466ebcb8e7)
+
+
 ## Logging DB
 
 
