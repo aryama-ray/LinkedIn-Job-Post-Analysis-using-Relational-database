@@ -8,6 +8,10 @@ The data cleaning process involved the following datasets:
 
 - `company_industries`
 - `company_specialities`
+- `companies`
+- `Job`
+- `Job Post`
+- `Jon Skills`
 - `benefits`
 - `employee_counts`
 
